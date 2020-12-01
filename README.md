@@ -1,0 +1,1 @@
+# woocommerce-e2e-boilerplate
