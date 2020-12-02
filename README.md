@@ -45,6 +45,10 @@ This repo aims to provide a stripped down version of the default WooCommerce E2E
 * Run the example test using **`npm run test:e2e`**.
 * Once you've done testing, spin down docker using **`npm run docker:down`**.
 
+### Customizing docker environment (WordPress Beta, Basic Auth for API tests etc.)
+
+Refer to https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker/init-wp-beta.sh
+
 ### Adding new tests
 
 To add new E2E tests, add new files to **`tests/e2e/specs/`** with the extension **`.test.js`**. The **`example.test.js`** may be used as a starting point.
@@ -66,5 +70,6 @@ To add new E2E tests, add new files to **`tests/e2e/specs/`** with the extension
 
 * Removed the folders `tests/e2e/api`, `tests/e2e/core-tests`, `tests/e2e/utils`, `tests/e2e/env` since these are standalone packages.
 * Removed the folder `tests/e2e/bin` (build scripts for E2E Components)
+* Removed `tests/e2e/docker/init-wp-beta.sh`
 * Renamed `tests/e2e/config/jest.setup.js` to `tests/e2e/config/jest.setup.example.js`.
 * Modified `tests/e2e/docker/initialize.sh` to include additional WooCommerce store setup.
