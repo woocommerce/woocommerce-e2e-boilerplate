@@ -16,7 +16,6 @@ This repo aims to provide a stripped down version of the default WooCommerce E2E
 
 * **WooCommerce E2E Environment** - `npm i @woocommerce/e2e-environment --save-dev`
 * **WooCommerce E2E Utils** - `npm i @woocommerce/e2e-environment --save-dev`
-* **Babel Preset Environment** - `npm i @babel/preset-env --save-dev`
 * **Jest** - `npm i jest --save-dev`
 
 ### Optional Packages
@@ -58,9 +57,9 @@ To add new E2E tests, add new files to **`tests/e2e/specs/`** with the extension
 
 * **Docker Initialization Script** - `tests/e2e/docker/initialize.sh`. This can be used to set up your testing environment such as installing additional plugins via WP-CLI / importing data / running additional scripts. Reference - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker/initialize.sh
 * **Jest Setup Script** - `tests/e2e/config/jest.setup.js`. Can be used to define custom scripts for Jest. You can also make use of the example script **`tests/e2e/config/jest.setup.example.js`** which requires **`@wordpress/e2e-test-utils`** package to be installed to run the defined functions. Please note that once the default template is enabled, all posts and products will be trashed, and local storage will be cleared between tests.
-* **Test Varibles** - To override the default test variables, create a new JSON file at **`tests/e2e/config/default.json`**. Reference - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/env/config/default.json.
+* **Test Variables** - To override the default test variables, create a new JSON file at **`tests/e2e/config/default.json`**. Reference - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/env/config/default.json.
 
-### Imortant References
+### Important References
 
 * **WooCommerce E2E Tests** - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/README.md
 * **WooCommerce E2E Environment** - https://www.npmjs.com/package/@woocommerce/e2e-environment
