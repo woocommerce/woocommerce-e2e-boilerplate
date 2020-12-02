@@ -10,7 +10,7 @@ wp user create customer customer@woocommercecoree2etestsuite.com --user_pass=pas
 echo "Adding basic WooCommerce settings..."
 wp option set woocommerce_store_address "Example Address Line 1"
 wp option set woocommerce_store_address_2 "Example Address Line 2"
-wp option set woocommerce_store_city "San Francisco"
+wp option set woocommerce_store_city "Example City"
 wp option set woocommerce_default_country "US:CA"
 wp option set woocommerce_store_postcode "94110"
 wp option set woocommerce_currency "USD"
