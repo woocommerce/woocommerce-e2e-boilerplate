@@ -15,7 +15,7 @@ This repo aims to provide a stripped down version of the default WooCommerce E2E
 ### Required Packages
 
 * **WooCommerce E2E Environment** - `npm i @woocommerce/e2e-environment --save-dev`
-* **WooCommerce E2E Utils** - `npm i @woocommerce/e2e-environment --save-dev`
+* **WooCommerce E2E Utils** - `npm i @woocommerce/e2e-utils --save-dev`
 * **Jest** - `npm i jest --save-dev`
 
 ### Optional Packages
