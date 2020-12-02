@@ -27,7 +27,8 @@ This repo aims to provide a stripped down version of the default WooCommerce E2E
 
 ### Setup
 
-* Download the **latest release**** of this package and copy the contents to the **`tests`** directory on the root of your WooCommerce extension.
+* Download the **[latest release](https://github.com/achyuthajoy/woocommerce-e2e-boilerplate/releases)** of this package to the root of your WooCommerce extension.
+* Modify **`tests/e2e/docker/initialize.sh`** as required.
 * Create the file **`.nvmrc`** on your project root and add the content as **`v12`**.
 * Modify **`package.json`** and add the following under **`scripts`**.
 
