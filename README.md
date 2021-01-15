@@ -51,7 +51,7 @@ Refer to https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker
 
 ### Adding new tests
 
-To add new E2E tests, add new files to **`tests/e2e/specs/`** with the extension **`.test.js`** or **`.spec.js`**. The **`example.test.js`** may be used as a starting point. Tests can be organized in folders `tests/e2e/specs/area-name/*.test.js`.
+To add new E2E tests, add new files to **`tests/e2e/specs/`** with the extension **`.test.js`** or **`.spec.js`**. The **`example.test.js`** may be used as a starting point. Tests can also be organized in folders under the `specs` directory. For example: tests/e2e/specs/{folder-name}/example.test.js.
 
 ### Relevant files
 
