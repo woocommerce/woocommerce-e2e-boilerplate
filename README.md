@@ -22,7 +22,7 @@ This repo aims to provide a stripped down version of the default WooCommerce E2E
 
 * **WooCommerce Core E2E Tests** - `npm i @woocommerce/e2e-core-tests --save-dev`
 * **WooCommerce API** - `npm i @woocommerce/api --save-dev`
-* **WordPress E2E Utils** - `npm i @wordpress/e2e-test-utils --save-dev`
+* **WordPress E2E Utils** - All of this package is exported from `@woocommerce/e2e-utils`. However, you can install it directly if you choose with `npm i @wordpress/e2e-test-utils --save-dev`
 
 ### Setup
 
@@ -51,7 +51,7 @@ Refer to https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker
 
 ### Adding new tests
 
-To add new E2E tests, add new files to **`tests/e2e/specs/`** with the extension **`.test.js`**. The **`example.test.js`** may be used as a starting point.
+To add new E2E tests, add new files to **`tests/e2e/specs/`** with the extension **`.test.js`** or **`.spec.js`**. The **`example.test.js`** may be used as a starting point. Tests can also be organized in folders under the `specs` directory. For example: tests/e2e/specs/{folder-name}/example.test.js.
 
 ### Relevant files
 
