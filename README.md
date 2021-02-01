@@ -2,7 +2,7 @@
 
 Are you looking to set up E2E tests for your WooCommerce extension? Then you can make use of the default WooCommerce E2E package.
 
-This repo aims to provide a stripped down version of the default WooCommerce E2E test suite(https://github.com/woocommerce/woocommerce/tree/master/tests/e2e) along with basic set up instructions to get started.
+This repo aims to provide a stripped down version of the default [WooCommerce E2E test suite](https://github.com/woocommerce/woocommerce/tree/master/tests/e2e) along with basic set up instructions to get started.
 
 ### Pre-requisites (Running tests locally)
 
@@ -32,26 +32,30 @@ This repo aims to provide a stripped down version of the default WooCommerce E2E
 * Modify **`package.json`** and add the following under **`scripts`**.
 
 ```
-"docker:down": "npm explore @woocommerce/e2e-environment -- npm run docker:down",
-"docker:ssh": "npm explore @woocommerce/e2e-environment -- npm run docker:ssh",
-"docker:up": "npm explore @woocommerce/e2e-environment -- npm run docker:up",
-"test:e2e": "npm explore @woocommerce/e2e-environment -- npm run test:e2e",
-"test:e2e-debug": "npm explore @woocommerce/e2e-environment -- npm run test:e2e-debug",
-"test:e2e-dev": "npm explore @woocommerce/e2e-environment -- npm run test:e2e-dev"
+"docker:down": "npx wc-e2e docker:down",
+"docker:ssh": "npx wc-e2e docker:ssh",
+"docker:up": "npx wc-e2e docker:up",
+"test:e2e": "npx wc-e2e test:e2e",
+"test:e2e-debug": "npx wc-e2e test:e2e-debug",
+"test:e2e-dev": "npx wc-e2e test:e2e-dev"
 ```
 
 * Spin up Docker using **`npm run docker:up`**.
 * To confirm that the Docker instance is running, open **`http://localhost:8084`** on your browser to see the newly set up WordPress site.
 * Run the example test using **`npm run test:e2e`**.
-* Once you've done testing, spin down docker using **`npm run docker:down`**.
+* Once you've completed testing, spin down docker using **`npm run docker:down`**.
 
-### Customizing docker environment (WordPress Beta, Basic Auth for API tests etc.)
+### Customizing docker environment
 
-Refer to https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker/init-wp-beta.sh
+- Docker Container - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/env/builtin.md
+- WordPress - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker/init-wp-beta.sh
 
 ### Adding new tests
 
-To add new E2E tests, add new files to **`tests/e2e/specs/`** with the extension **`.test.js`** or **`.spec.js`**. The **`example.test.js`** may be used as a starting point. Tests can also be organized in folders under the `specs` directory. For example: tests/e2e/specs/{folder-name}/example.test.js.
+To add new E2E tests, add new files to **`tests/e2e/specs/`**. **`tests/e2e/specs/example.test.js`** in this repository may be used as a starting point. Tests can also be organized in folders under the `specs` directory. For example: **`tests/e2e/specs/{folder-name}/example.test.js`**.
+
+- Files with the extensions **`.test.js`** or **`.spec.js`** are run automatically by `npm run test:e2e`.
+- Adhoc tests can be created with the **`.js`** and executed with `npm run test:e2e tests/e2e/specs/test-example.js`.
 
 ### Relevant files
 
