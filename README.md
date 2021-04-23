@@ -4,6 +4,8 @@ Are you looking to set up E2E tests for your WooCommerce extension? Then you can
 
 This repo aims to provide a stripped down version of the default [WooCommerce E2E test suite](https://github.com/woocommerce/woocommerce/tree/master/tests/e2e) along with basic set up instructions to get started.
 
+---
+
 ### Pre-requisites (Running tests locally)
 
 * **Node.js** - https://nodejs.org/en/download/
@@ -12,23 +14,24 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
   * **Mac** - https://docs.docker.com/docker-for-mac/install/
   * **Windows** - https://docs.docker.com/docker-for-windows/install/
 
-### Required Packages
+### Required Node Packages
 
-* **WooCommerce E2E Environment** - `npm i @woocommerce/e2e-environment --save-dev`
-* **WooCommerce E2E Utils** - `npm i @woocommerce/e2e-utils --save-dev`
-* **Jest** - `npm i jest --save-dev`
+* [**WooCommerce E2E Environment**](https://www.npmjs.com/package/@woocommerce/e2e-environment)
+* [**WooCommerce E2E Utils**](https://www.npmjs.com/package/@woocommerce/e2e-utils)
+* [**Jest**](https://www.npmjs.com/package/jest)
 
-### Optional Packages
+### Optional Node Packages
 
-* **WooCommerce Core E2E Tests** - `npm i @woocommerce/e2e-core-tests --save-dev`
-* **WooCommerce API** - `npm i @woocommerce/api --save-dev`
-* **WordPress E2E Utils** - All of this package is exported from `@woocommerce/e2e-utils`. However, you can install it directly if you choose with `npm i @wordpress/e2e-test-utils --save-dev`
+* [**WooCommerce Core E2E Tests**](https://www.npmjs.com/package/@woocommerce/e2e-core-tests)
+* [**WooCommerce API**](https://www.npmjs.com/package/woocommerce-api)
+* [**WordPress E2E Utils**](https://www.npmjs.com/package/@wordpress/e2e-test-utils) - All of this package is exported from `@woocommerce/e2e-utils`. However, you can install it directly if you choose.
+
+---
 
 ### Setup
 
-* Download the **[latest release](https://github.com/achyuthajoy/woocommerce-e2e-boilerplate/releases)** of this package to the root of your WooCommerce extension.
+* Download the **[latest release](https://github.com/woocommerce/woocommerce-e2e-boilerplate/releases)** of this package to the root of your WooCommerce extension.
 * Modify **`tests/e2e/docker/initialize.sh`** as required.
-* Create the file **`.nvmrc`** on your project root and add the content as **`v12`**.
 * Modify **`package.json`** and add the following under **`scripts`**.
 
 ```
@@ -40,10 +43,26 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
 "test:e2e-dev": "npx wc-e2e test:e2e-dev"
 ```
 
+* Create the file **`.nvmrc`** on your project root and add the content as **`v12`**.
+* Activate v12 of Node for your shell session by running **`nvm use`** from the project root.
+* Install required packages as development dependencies.
+
+```bash
+npm install --save-dev @woocommerce/e2e-environment @woocommerce/e2e-utils jest
+```
+
+* _Optional: Install the optional packages listed above_
+
+```bash
+npm install --save-dev @woocommerce/e2e-core-tests @woocommerce/api @wordpress/e2e-test-utils
+```
+
 * Spin up Docker using **`npm run docker:up`**.
 * To confirm that the Docker instance is running, open **`http://localhost:8084`** on your browser to see the newly set up WordPress site.
 * Run the example test using **`npm run test:e2e`**.
 * Once you've completed testing, spin down docker using **`npm run docker:down`**.
+
+---
 
 ### Customizing docker environment
 
