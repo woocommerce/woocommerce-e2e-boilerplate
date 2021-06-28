@@ -30,6 +30,8 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
 
 ### Setup
 
+Note: the following assumes an existing WooCommerce extension with an existing `package.json`. 
+
 * Download the **[latest release](https://github.com/woocommerce/woocommerce-e2e-boilerplate/releases)** of this package to the root of your WooCommerce extension.
 * Modify **`tests/e2e/docker/initialize.sh`** as required.
 * Modify **`package.json`** and add the following under **`scripts`**.
