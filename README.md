@@ -30,7 +30,12 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
 
 ### Setup
 
-Note: the following assumes an existing WooCommerce extension with an existing `package.json`. 
+**Requirements**
+
+* Note that `npm@6` is required for setup
+* The following steps assumes there is an existing WooCommerce extension with an existing `package.json`. If your project does not contain a `package.json` file, create one using `npm init`. More information on this can be found [here](https://docs.npmjs.com/creating-a-package-json-file#creating-a-new-packagejson-file).
+
+**Steps**
 
 * Download the **[latest release](https://github.com/woocommerce/woocommerce-e2e-boilerplate/releases)** of this package to the root of your WooCommerce extension.
 * Modify **`tests/e2e/docker/initialize.sh`** as required.
@@ -50,13 +55,13 @@ Note: the following assumes an existing WooCommerce extension with an existing `
 * Install required packages as development dependencies.
 
 ```bash
-npm install --save-dev @woocommerce/e2e-environment @woocommerce/e2e-utils jest
+npm i --save-dev @woocommerce/e2e-environment @woocommerce/e2e-utils @woocommerce/api @wordpress/e2e-test-utils jest
 ```
 
-* _Optional: Install the optional packages listed above_
+* _Optional: Install the optional package listed below for the full WooCommerce e2e test suite_
 
 ```bash
-npm install --save-dev @woocommerce/e2e-core-tests @woocommerce/api @wordpress/e2e-test-utils
+npm i --save-dev @woocommerce/e2e-core-tests
 ```
 
 * Spin up Docker using **`npm run docker:up`**.
