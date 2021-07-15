@@ -18,22 +18,32 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
 
 * [**WooCommerce E2E Environment**](https://www.npmjs.com/package/@woocommerce/e2e-environment)
 * [**WooCommerce E2E Utils**](https://www.npmjs.com/package/@woocommerce/e2e-utils)
+* [**WooCommerce API**](https://www.npmjs.com/package/woocommerce-api)
 * [**Jest**](https://www.npmjs.com/package/jest)
 
 ### Optional Node Packages
 
 * [**WooCommerce Core E2E Tests**](https://www.npmjs.com/package/@woocommerce/e2e-core-tests)
-* [**WooCommerce API**](https://www.npmjs.com/package/woocommerce-api)
 * [**WordPress E2E Utils**](https://www.npmjs.com/package/@wordpress/e2e-test-utils) - All of this package is exported from `@woocommerce/e2e-utils`. However, you can install it directly if you choose.
 
 ---
 
-### Setup
+## Setup
 
 **Requirements**
 
-* Note that `npm@6` is required for setup
-* The following steps assumes there is an existing WooCommerce extension with an existing `package.json`. If your project does not contain a `package.json` file, create one using `npm init`. More information on this can be found [here](https://docs.npmjs.com/creating-a-package-json-file#creating-a-new-packagejson-file).
+* `npm@6` is required for setup. To install, run:
+```
+npm install -g npm@6
+```
+
+* The following steps are intended to be used with an existing WooCommerce extension that has a `package.json` file.
+  * If your project does not contain a `package.json` file, create one:
+
+```
+npm init
+```
+More information on creating a `package.json` file can be found [here](https://docs.npmjs.com/creating-a-package-json-file#creating-a-new-packagejson-file).
 
 **Steps**
 
@@ -55,13 +65,13 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
 * Install required packages as development dependencies.
 
 ```bash
-npm i --save-dev @woocommerce/e2e-environment @woocommerce/e2e-utils @woocommerce/api @wordpress/e2e-test-utils jest
+npm i --save-dev @woocommerce/e2e-environment @woocommerce/e2e-utils @woocommerce/api jest
 ```
 
 * _Optional: Install the optional package listed below for the full WooCommerce e2e test suite_
 
 ```bash
-npm i --save-dev @woocommerce/e2e-core-tests
+npm i --save-dev @woocommerce/e2e-core-tests @wordpress/e2e-test-utils
 ```
 
 * Spin up Docker using **`npm run docker:up`**.
