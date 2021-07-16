@@ -24,7 +24,6 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
 ### Optional Node Packages
 
 * [**WooCommerce Core E2E Tests**](https://www.npmjs.com/package/@woocommerce/e2e-core-tests)
-* [**WordPress E2E Utils**](https://www.npmjs.com/package/@wordpress/e2e-test-utils) - All of this package is exported from `@woocommerce/e2e-utils`. However, you can install it directly if you choose.
 
 ---
 
@@ -71,7 +70,7 @@ npm i --save-dev @woocommerce/e2e-environment @woocommerce/e2e-utils @woocommerc
 * _Optional: Install the optional package listed below for the full WooCommerce e2e test suite_
 
 ```bash
-npm i --save-dev @woocommerce/e2e-core-tests @wordpress/e2e-test-utils
+npm i --save-dev @woocommerce/e2e-core-tests
 ```
 
 * Spin up Docker using **`npm run docker:up`**.
