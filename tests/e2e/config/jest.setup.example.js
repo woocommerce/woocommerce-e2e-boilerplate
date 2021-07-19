@@ -4,7 +4,7 @@ const {
 	switchUserToTest,
 	clearLocalStorage,
 	setBrowserViewport
-} = require( "@wordpress/e2e-test-utils" );
+} = require( "@woocommerce/e2e-utils" );
 
 /**
  * Navigates to the post listing screen and bulk-trashes any posts which exist.
