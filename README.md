@@ -92,6 +92,16 @@ To add new E2E tests, add new files to **`tests/e2e/specs/`**. **`tests/e2e/spec
 - Files with the extensions **`.test.js`** or **`.spec.js`** are run automatically by `npm run test:e2e`.
 - Adhoc tests can be created with the **`.js`** and executed with `npm run test:e2e tests/e2e/specs/test-example.js`.
 
+### Running core tests
+
+If you're installed the `@woocommerce/e2e-core-tests` and wish to run the tests within your project, note that all of the tests are wrapped in functions. In order to run the tests, create a local test spec and use the test function:
+
+```javascript
+const { runActivationTest } = require( '@woocommerce/e2e-core-tests' );
+
+runActivationTest();
+```
+
 ### Relevant files
 
 * **Docker Initialization Script** - `tests/e2e/docker/initialize.sh`. This can be used to set up your testing environment such as installing additional plugins via WP-CLI / importing data / running additional scripts. Reference - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker/initialize.sh
