@@ -102,6 +102,8 @@ const { runActivationTest } = require( '@woocommerce/e2e-core-tests' );
 runActivationTest();
 ```
 
+For more imformation about the core tests, including what tests are available, how to re-run tests, and general setup, please see the [WooCommerce Core End to End Test Suite README](https://github.com/woocommerce/woocommerce/blob/trunk/tests/e2e/core-tests/README.md).
+
 ### Relevant files
 
 * **Docker Initialization Script** - `tests/e2e/docker/initialize.sh`. This can be used to set up your testing environment such as installing additional plugins via WP-CLI / importing data / running additional scripts. Reference - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker/initialize.sh
