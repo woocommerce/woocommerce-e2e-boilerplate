@@ -130,6 +130,7 @@ This section provides examples of plugins and packages that are implementing Woo
 * [**WooCommerce Core E2E Tests**](https://www.npmjs.com/package/@woocommerce/e2e-core-tests)
 
 Examples of how they've integrated these packages and built out tests can be found [in the specs folder](https://github.com/prasidhda/woo-manage-fraud-orders/tree/master/tests/e2e/specs) within the project.
+
 **WooCommerce Payments**
 
 WooCommerce Payments is using both the [**WooCommerce E2E Utils**](https://www.npmjs.com/package/@woocommerce/e2e-utils) and [**WooCommerce API**](https://www.npmjs.com/package/woocommerce-api) packages as part of the [WooCommerce Payments end-to-end test suite](https://github.com/Automattic/woocommerce-payments/tree/develop/tests/e2e). An example usage can be found in the [`Order > Refund Failure` test suite](https://github.com/Automattic/woocommerce-payments/blob/develop/tests/e2e/specs/merchant/merchant-orders-refund-failures.spec.js).
