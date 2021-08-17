@@ -18,7 +18,7 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
 
 * [**WooCommerce E2E Environment**](https://www.npmjs.com/package/@woocommerce/e2e-environment)
 * [**WooCommerce E2E Utils**](https://www.npmjs.com/package/@woocommerce/e2e-utils)
-* [**WooCommerce API**](https://www.npmjs.com/package/woocommerce-api)
+* [**WooCommerce API**](https://www.npmjs.com/package/@woocommerce/api)
 * [**Jest**](https://www.npmjs.com/package/jest)
 
 ### Optional Node Packages
@@ -102,7 +102,7 @@ const { runActivationTest } = require( '@woocommerce/e2e-core-tests' );
 runActivationTest();
 ```
 
-For more imformation about the core tests, including what tests are available, how to re-run tests, and general setup, please see the [WooCommerce Core End to End Test Suite README](https://github.com/woocommerce/woocommerce/blob/trunk/tests/e2e/core-tests/README.md).
+For more information about the core tests, including what tests are available, how to re-run tests, and general setup, please see the [WooCommerce Core End to End Test Suite README](https://github.com/woocommerce/woocommerce/blob/trunk/tests/e2e/core-tests/README.md).
 
 ### Relevant files
 
@@ -115,6 +115,34 @@ For more imformation about the core tests, including what tests are available, h
 * **WooCommerce E2E Tests** - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/README.md
 * **WooCommerce E2E Environment** - https://www.npmjs.com/package/@woocommerce/e2e-environment
 * **WooCommerce E2E Core Tests** - https://www.npmjs.com/package/@woocommerce/e2e-core-tests
+
+### Examples
+
+This section provides examples of plugins and packages that are implementing WooCommerce related end-to-end tests.
+
+**Woo Manage Fraud Orders**
+
+[Woo Manage Fraud Orders](https://github.com/prasidhda/woo-manage-fraud-orders) is making use of the following packages in their end-to-end tests:
+
+* [**WooCommerce E2E Environment**](https://www.npmjs.com/package/@woocommerce/e2e-environment)
+* [**WooCommerce E2E Utils**](https://www.npmjs.com/package/@woocommerce/e2e-utils)
+* [**WooCommerce API**](https://www.npmjs.com/package/@woocommerce/api)
+* [**WooCommerce Core E2E Tests**](https://www.npmjs.com/package/@woocommerce/e2e-core-tests)
+
+Examples of how they've integrated these packages and built out tests can be found [in the specs folder](https://github.com/prasidhda/woo-manage-fraud-orders/tree/master/tests/e2e/specs) within the project.
+
+**WooCommerce Payments**
+
+WooCommerce Payments is using the following packages as part of the [WooCommerce Payments end-to-end test suite](https://github.com/Automattic/woocommerce-payments/tree/develop/tests/e2e):
+
+* [**WooCommerce E2E Utils**](https://www.npmjs.com/package/@woocommerce/e2e-utils)
+* [**WooCommerce API**](https://www.npmjs.com/package/@woocommerce/api)
+
+An example usage can be found in the [`Order > Refund Failure` test suite](https://github.com/Automattic/woocommerce-payments/blob/develop/tests/e2e/specs/merchant/merchant-orders-refund-failures.spec.js).
+
+**WooCommerce Admin**
+
+WooCommerce Admin has an [Admin E2E Tests NPM package](https://www.npmjs.com/package/@woocommerce/admin-e2e-tests) that makes use of the [**WooCommerce E2E Environment**](https://www.npmjs.com/package/@woocommerce/e2e-environment) and [**WooCommerce E2E Utils**](https://www.npmjs.com/package/@woocommerce/e2e-utils) packages. Note that these tests have been written in TypeScript.
 
 ### Changes made to the original WooCommerce E2E Test suite
 
