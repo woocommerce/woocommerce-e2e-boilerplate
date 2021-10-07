@@ -67,7 +67,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: actual
+    id: environment
     attributes:
       label: WordPress Environment
       description: |
@@ -78,20 +78,18 @@ body:
         Please select “Get system report”, then “Copy for support”, and then paste it here.
     validations:
       required: true
-  - type: markdown
+  - type: checkboxes
+    id: isolating
     attributes:
-      value: |
+      label: Isolating the problem
+      description: |
         Please try testing your site for theme and plugins conflict. 
         To do that deactivate all plugins except for WooCommerce and switch to a default WordPress theme or [Storefront](https://en-gb.wordpress.org/themes/storefront/). Then test again. 
         If the issue is resolved with the default theme and all plugins deactivated, it means that one of your plugins or a theme is causing the issue. 
         You will then need to enable it one by one and test every time you do that in order to figure out which plugin is causing the issue.
-  - type: checkboxes
-    id: prerequisites
-    attributes:
-      label: Isolating the problem
-      description: Please confirm these before submitting the issue.
-      required: true
       options:
         - label: I have deactivated other plugins and confirmed this bug occurs when only WooCommerce plugin is active.
         - label: This bug happens with a default WordPress theme active, or [Storefront](https://woocommerce.com/storefront/).
         - label: I can reproduce this bug consistently using the steps above.
+    validations:
+      required: true
