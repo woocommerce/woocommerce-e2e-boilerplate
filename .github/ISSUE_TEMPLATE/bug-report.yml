@@ -67,7 +67,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: actual
+    id: environment
     attributes:
       label: WordPress Environment
       description: |
@@ -86,7 +86,7 @@ body:
         If the issue is resolved with the default theme and all plugins deactivated, it means that one of your plugins or a theme is causing the issue. 
         You will then need to enable it one by one and test every time you do that in order to figure out which plugin is causing the issue.
   - type: checkboxes
-    id: prerequisites
+    id: isolating
     attributes:
       label: Isolating the problem
       description: Please confirm these before submitting the issue.
