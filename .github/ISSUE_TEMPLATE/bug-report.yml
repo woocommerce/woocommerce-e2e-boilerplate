@@ -90,8 +90,9 @@ body:
     attributes:
       label: Isolating the problem
       description: Please confirm these before submitting the issue.
-      required: true
       options:
         - label: I have deactivated other plugins and confirmed this bug occurs when only WooCommerce plugin is active.
         - label: This bug happens with a default WordPress theme active, or [Storefront](https://woocommerce.com/storefront/).
         - label: I can reproduce this bug consistently using the steps above.
+    validations:
+      required: true
