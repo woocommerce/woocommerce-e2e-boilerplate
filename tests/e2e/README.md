@@ -388,6 +388,10 @@ php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Insta
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 composer --version --no-interaction # Verify that Composer installation was successful
+
+sudo apt install php-xml -y
+
+sudo apt install php-mbstring -y
 ```
 
 For Puppeteer to run in headless mode, install these packages:
