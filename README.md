@@ -24,6 +24,7 @@ This repo aims to provide a stripped down version of the default [WooCommerce E2
 ### Optional Node Packages
 
 * [**WooCommerce Core E2E Tests**](https://www.npmjs.com/package/@woocommerce/e2e-core-tests)
+* [**WooCommerce Admin E2E Tests**](https://www.npmjs.com/package/@woocommerce/admin-e2e-tests)
 
 ---
 
