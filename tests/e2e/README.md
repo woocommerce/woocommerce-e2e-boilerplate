@@ -77,7 +77,7 @@ The jest test sequencer uses the following test variables:
 }
 ```
 
-If you need to modify the port for your local test environment (eg. port is already in use), copy `tests/e2e/env/config/default.json` to `tests/e2e/config/default.json` and edit that copy. Only edit this file while your test container is `down`.
+If you need to modify the port for your local test environment (eg. port is already in use), copy [`tests/e2e/env/config/default.json`](https://github.com/woocommerce/woocommerce/blob/trunk/packages/js/e2e-environment/config/default.json) to `tests/e2e/config/default.json` and edit that copy. Only edit this file while your test container is `down`.
 
 ### Jest test sequencer
 
@@ -269,7 +269,7 @@ In the WooCommerce Core repository the tests are kept in `tests/e2e/core-tests/s
 The following packages are used to write tests:
 
 - `@automattic/puppeteer-utils` - utilities and configuration for running puppeteer against WordPress. See details in the [package's repository](https://github.com/Automattic/puppeteer-utils).
-- `@woocommerce/e2e-utils` - this package contains utilities to simplify writing e2e tests specific to WooCommmerce. See details in the [package's repository](https://github.com/woocommerce/woocommerce/tree/master/tests/e2e/utils).
+- `@woocommerce/e2e-utils` - this package contains utilities to simplify writing e2e tests specific to WooCommmerce. See details in the [package's repository](https://github.com/woocommerce/woocommerce/tree/trunk/packages/js/e2e-utils).
 
 ### Creating test structure
 
