@@ -2,7 +2,7 @@
 
 Are you looking to set up E2E tests for your WooCommerce extension? Then you can make use of the default WooCommerce E2E package.
 
-This repo aims to provide a stripped down version of the default [WooCommerce E2E test suite](https://github.com/woocommerce/woocommerce/tree/master/tests/e2e) along with basic set up instructions to get started.
+This repo aims to provide a stripped down version of the default [WooCommerce E2E test suite](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/e2e/README.md) along with basic set up instructions to get started.
 
 ---
 
@@ -83,8 +83,8 @@ npm i --save-dev @woocommerce/e2e-core-tests
 
 ### Customizing docker environment
 
-- Docker Container - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/env/builtin.md
-- WordPress - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker/init-wp-beta.sh
+- Docker Container - https://github.com/woocommerce/woocommerce/blob/trunk/packages/js/e2e-environment/builtin.md
+- WordPress - https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/e2e/docker/init-wp-beta.sh
 
 ### Adding new tests
 
@@ -103,17 +103,17 @@ const { runActivationTest } = require( '@woocommerce/e2e-core-tests' );
 runActivationTest();
 ```
 
-For more information about the core tests, including what tests are available, how to re-run tests, and general setup, please see the [WooCommerce Core End to End Test Suite README](https://github.com/woocommerce/woocommerce/blob/trunk/tests/e2e/core-tests/README.md).
+For more information about the core tests, including what tests are available, how to re-run tests, and general setup, please see the [WooCommerce Core End to End Test Suite README](https://github.com/woocommerce/woocommerce/blob/trunk/packages/js/e2e-core-tests/README.md).
 
 ### Relevant files
 
-* **Docker Initialization Script** - `tests/e2e/docker/initialize.sh`. This can be used to set up your testing environment such as installing additional plugins via WP-CLI / importing data / running additional scripts. Reference - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/docker/initialize.sh
+* **Docker Initialization Script** - `tests/e2e/docker/initialize.sh`. This can be used to set up your testing environment such as installing additional plugins via WP-CLI / importing data / running additional scripts. Reference - https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/e2e/docker/initialize.sh
 * **Jest Setup Script** - `tests/e2e/config/jest.setup.js`. Can be used to define custom scripts for Jest. You can also make use of the example script **`tests/e2e/config/jest.setup.example.js`** which requires **`@woocommerce/e2e-utils`** package to be installed to run the defined functions. Please note that once the default template is enabled, all posts and products will be trashed, and local storage will be cleared between tests.
-* **Test Variables** - To override the default test variables, create a new JSON file at **`tests/e2e/config/default.json`**. Reference - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/env/config/default.json.
+* **Test Variables** - To override the default test variables, create a new JSON file at **`tests/e2e/config/default.json`**. Reference - https://github.com/woocommerce/woocommerce/blob/trunk/packages/js/e2e-environment/config/default.json.
 
 ### Important References
 
-* **WooCommerce E2E Tests** - https://github.com/woocommerce/woocommerce/blob/master/tests/e2e/README.md
+* **WooCommerce E2E Tests** - https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/e2e/README.md
 * **WooCommerce E2E Environment** - https://www.npmjs.com/package/@woocommerce/e2e-environment
 * **WooCommerce E2E Core Tests** - https://www.npmjs.com/package/@woocommerce/e2e-core-tests
 
