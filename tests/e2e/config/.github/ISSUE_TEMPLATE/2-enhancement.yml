@@ -1,7 +1,6 @@
 name: ✨ Enhancement Request
 description: If you have an idea to improve WooCommerce E2E Tests Boilerplate or need something for development please let us know or submit a Pull Request!
 title: "[Enhancement]: "
-labels: ["type: enhancement"]
 body:
   - type: markdown
     attributes:
