@@ -1,6 +1,6 @@
 ### All Submissions:
 
-* [ ] Have you followed the [Contributing guideline](https://github.com/woocommerce/woocommerce-e2e-boilerplate/blob/trunk/.github/CONTRIBUTING.md)?
+* [ ] Have you followed the [Contributing guidelines](https://github.com/woocommerce/woocommerce-e2e-boilerplate/blob/trunk/.github/CONTRIBUTING.md)?
 * [ ] Does your code follow the [WordPress' coding standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/)?
 * [ ] Have you checked to ensure there aren't other open [Pull Requests](https://github.com/woocommerce/woocommerce-e2e-boilerplate/pulls) for the same update/change?
 
