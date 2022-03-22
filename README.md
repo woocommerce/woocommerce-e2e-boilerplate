@@ -86,14 +86,14 @@ npm i --save-dev @woocommerce/e2e-core-tests
 - Docker Container - https://github.com/woocommerce/woocommerce/blob/trunk/packages/js/e2e-environment/builtin.md
 - WordPress - https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/e2e/docker/init-wp-beta.sh
 
-### Adding new tests
+### Adding new E2E tests
 
 To add new E2E tests, add new files to **`tests/e2e/specs/`**. **`tests/e2e/specs/example.test.js`** in this repository may be used as a starting point. Tests can also be organized in folders under the `specs` directory. For example: **`tests/e2e/specs/{folder-name}/example.test.js`**.
 
 - Files with the extensions **`.test.js`** or **`.spec.js`** are run automatically by `npm run test:e2e`.
 - Adhoc tests can be created with the **`.js`** and executed with `npm run test:e2e tests/e2e/specs/test-example.js`.
 
-### Running core tests
+### Running core E2E tests
 
 If you installed the optional `@woocommerce/e2e-core-tests` package and wish to run the tests within your project, note that all of the tests are wrapped in functions. In order to run the tests, create a local test spec and use the test function. For example, to run the activation tests, you would need to do the following:
 
@@ -105,17 +105,54 @@ runActivationTest();
 
 For more information about the core tests, including what tests are available, how to re-run tests, and general setup, please see the [WooCommerce Core End to End Test Suite README](https://github.com/woocommerce/woocommerce/blob/trunk/packages/js/e2e-core-tests/README.md).
 
+### Running Core API tests
+
+The full suite of core API tests are found in the [@woocommerce/api-core-tests](https://www.npmjs.com/package/@woocommerce/api-core-tests) package. It uses Jest as the test runner, and [Supertest](https://www.npmjs.com/package/supertest) as the API testing library. However as of Jest v27, it is [not possible](https://github.com/facebook/jest/pull/11084) to run Jest tests when they're inside the `node_modules` folder. Jest v28 [does not have this limitation](https://github.com/facebook/jest/releases/tag/v28.0.0-alpha.5), but is still in alpha at the time of this writing. The following steps will guide the user in setting up the core API tests outside the `node_modules` folder in order to successfully run them. 
+
+From the root directory of your project, use `npm pack` to download a tarball file of the Core API testing package.
+```
+npm pack @woocommerce/api-core-tests
+```
+
+Decompress the tarball into the `tests` folder. By default, contents will be extracted to the `package` folder. Rename the folder to anything appropriate like `api`.
+```
+tar -xf woocommerce-api-core-tests-0.1.0.tgz -C tests
+rm woocommerce-api-core-tests-0.1.0.tgz # delete the tarball
+mv tests/package tests/api
+``` 
+
+Navigate to the `api` folder to install dependencies
+```
+cd tests/api
+npm install
+```
+
+Assuming that the e2e environment is already up, run the "hello" API test group to verify if the tests can make authenticated and non-authenticated calls to the REST API of the environment being tested.
+```
+npm run test:hello
+```
+
+By default, the API tests will run against the E2E docker environment, as indicated in the `BASE_URL` variable in `tests/api/.env` file. You may specify a different test environment for the tests to run against by changing this variable, along with `USER_KEY` and `USER_SECRET`.
+
+
+### Adding new API tests
+
+New API tests should be written in the `tests/api/tests` folder. The `tests/api/tests/hello/hello.test.js` file contains a simple test structure, and can be used as template for succeeding tests. Make sure to follow [these guidelines](https://github.com/woocommerce/woocommerce/blob/trunk/packages/js/api-core-tests/README.md#writing-tests) when writing new tests.
+
+
 ### Relevant files
 
 * **Docker Initialization Script** - `tests/e2e/docker/initialize.sh`. This can be used to set up your testing environment such as installing additional plugins via WP-CLI / importing data / running additional scripts. Reference - https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/e2e/docker/initialize.sh
 * **Jest Setup Script** - `tests/e2e/config/jest.setup.js`. Can be used to define custom scripts for Jest. You can also make use of the example script **`tests/e2e/config/jest.setup.example.js`** which requires **`@woocommerce/e2e-utils`** package to be installed to run the defined functions. Please note that once the default template is enabled, all posts and products will be trashed, and local storage will be cleared between tests.
 * **Test Variables** - To override the default test variables, create a new JSON file at **`tests/e2e/config/default.json`**. Reference - https://github.com/woocommerce/woocommerce/blob/trunk/packages/js/e2e-environment/config/default.json.
+* **.env.example File** - `tests/api/.env.example`. This is the template for creating a `.env` file, which contains test variables essential for running Core API tests.
 
 ### Important References
 
 * **WooCommerce E2E Tests** - https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/tests/e2e/README.md
 * **WooCommerce E2E Environment** - https://www.npmjs.com/package/@woocommerce/e2e-environment
 * **WooCommerce E2E Core Tests** - https://www.npmjs.com/package/@woocommerce/e2e-core-tests
+* **WooCommerce Core API Tests** - https://www.npmjs.com/package/@woocommerce/api-core-tests
 
 ### Examples
 
